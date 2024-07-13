@@ -42,11 +42,11 @@ function ConvertHandler() {
 
   this.getReturnUnit = function (initUnit) {
     let result;
-    switch (initUnit) {
+    switch (initUnit.toLowerCase()) {
       case "gal":
         result = "L";
         break;
-      case "L":
+      case "l":
         result = "gal";
         break;
       case "mi":
@@ -67,11 +67,11 @@ function ConvertHandler() {
 
   this.spellOutUnit = function (unit) {
     let result;
-    switch (unit) {
+    switch (unit.toLowerCase()) {
       case "gal":
         result = "gallons";
         break;
-      case "L":
+      case "l":
         result = "liters";
         break;
       case "mi":
@@ -95,11 +95,11 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     let result;
-    switch (initUnit) {
+    switch (initUnit.toLowerCase()) {
       case "gal":
         result = initNum * galToL;
         break;
-      case "L":
+      case "l":
         result = initNum / galToL;
         break;
       case "mi":
@@ -115,7 +115,7 @@ function ConvertHandler() {
         result = initNum / lbsToKg;
         break;
     }
-    return result;
+    return parseFloat(result.toFixed(5));
   };
 }
 
